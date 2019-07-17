@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <version>2.1.6.RELEASE</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>kane.exercise</groupId>
+    <artifactId>exercise4j-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <lombok.version>1.18.8</lombok.version>
+        <graphql-starter.version>3.10.0</graphql-starter.version>
+        <graphql-java-tools.version>4.2.0</graphql-java-tools.version>
+    </properties>
+
+    <modules>
+        <module>springboot-graphql</module>
+    </modules>
+
+    <dependencies>
+        <!-- Annotation Processor -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- developer -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- graphql -->
+            <dependency>
+                <groupId>com.graphql-java</groupId>
+                <artifactId>graphql-spring-boot-starter</artifactId>
+                <version>${graphql-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.graphql-java</groupId>
+                <artifactId>graphql-java-tools</artifactId>
+                <version>${graphql-java-tools.version}</version>
+            </dependency>
+            <!-- graphql图形化工具 http://localhost:8080/graphiql -->
+            <dependency>
+                <groupId>com.graphql-java</groupId>
+                <artifactId>graphiql-spring-boot-starter</artifactId>
+                <version>${graphql-starter.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
