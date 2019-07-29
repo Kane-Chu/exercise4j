@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  security:
+    user:
+      name: kane
+      password: pass1234
+    filter:
+      order: 3
+
+
+#logging:
+#  level:
+#    root: debug

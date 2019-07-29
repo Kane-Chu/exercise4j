@@ -1,0 +1,16 @@
+server:
+  port: 9090
+
+web:
+  domain: localhost:${server.port}
+  oauth2:
+    auth-uri: http://localhost:8080/oauth/authorize?client_id=${web.oauth2.client-id}&redirect_uri=http://${web.domain}${web.oauth2.callback}&response_type=code&scope=read_user_info
+    token-uri: http://localhost:8080/oauth/token
+    resource-uri: http://localhost:8080/api/users/current
+    client-id: kane-app
+    client-secret: pass1234
+    callback: /callback
+logging:
+  level:
+    web: debug
+    kane.exercise: debug
