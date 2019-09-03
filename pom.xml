@@ -31,6 +31,7 @@
         <module>springboot-oauth2-client</module>
         <module>spring-controller-log</module>
         <module>kane-commons</module>
+        <module>spring-event</module>
     </modules>
 
     <dependencies>
