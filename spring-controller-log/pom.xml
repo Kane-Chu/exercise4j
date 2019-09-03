@@ -9,7 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springboot-oauth2-client</artifactId>
+    <artifactId>spring-controller-log</artifactId>
+
 
     <dependencies>
         <dependency>
@@ -18,9 +19,13 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.security.oauth</groupId>
-            <artifactId>spring-security-oauth2</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>kane.exercise</groupId>
+            <artifactId>kane-commons</artifactId>
         </dependency>
     </dependencies>
-
 </project>

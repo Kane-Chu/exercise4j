@@ -17,6 +17,7 @@
 
 
     <properties>
+        <project.version>1.0.0-SNAPSHOT</project.version>
         <lombok.version>1.18.8</lombok.version>
         <graphql-starter.version>3.10.0</graphql-starter.version>
         <graphql-java-tools.version>4.2.0</graphql-java-tools.version>
@@ -28,6 +29,8 @@
         <module>springboot-graphql</module>
         <module>springboot-oauth2</module>
         <module>springboot-oauth2-client</module>
+        <module>spring-controller-log</module>
+        <module>kane-commons</module>
     </modules>
 
     <dependencies>
@@ -44,6 +47,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
@@ -51,11 +59,25 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- project -->
+            <dependency>
+                <groupId>kane.exercise</groupId>
+                <artifactId>kane-commons</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <!-- developer -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jetbrains</groupId>
+                <artifactId>annotations</artifactId>
+                <version>17.0.0</version>
+                <scope>provided</scope>
             </dependency>
 
             <!-- graphql -->
