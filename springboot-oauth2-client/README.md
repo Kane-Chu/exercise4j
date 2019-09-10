@@ -11,7 +11,7 @@
 
     浏览器访问
     ```
-    http://localhost:9090/login
+    http://localhost:9090/oauth2
     ```
 
 2. 获取用户信息

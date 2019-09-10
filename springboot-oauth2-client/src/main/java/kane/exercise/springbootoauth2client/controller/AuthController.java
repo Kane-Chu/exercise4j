@@ -35,8 +35,8 @@ public class AuthController {
         this.webProperties = webProperties;
     }
 
-    @RequestMapping("/login")
-    public String thirdLogin() {
+    @RequestMapping("/oauth2")
+    public String oauth2() {
         String uri = oAuth2Properties.getAuthUri();
         log.debug("redirect to [{}]", uri);
         return "redirect:" + uri;

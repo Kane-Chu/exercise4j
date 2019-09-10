@@ -26,15 +26,21 @@ import org.springframework.security.oauth2.client.token.grant.password.ResourceO
 @Configuration
 public class OAuth2Config {
 
-    private OAuth2Properties oAuth2Properties;
+    private final OAuth2Properties oAuth2Properties;
 
-    @Autowired(required = false)
-    private ClientHttpRequestFactory clientHttpRequestFactory;
+    private final ClientHttpRequestFactory clientHttpRequestFactory;
+
+    public OAuth2Config(OAuth2Properties oAuth2Properties, @Autowired(required = false) ClientHttpRequestFactory clientHttpRequestFactory) {
+        this.oAuth2Properties = oAuth2Properties;
+        if(clientHttpRequestFactory == null){
+            this.clientHttpRequestFactory = new SimpleClientHttpRequestFactory();
+        }else{
+            this.clientHttpRequestFactory = clientHttpRequestFactory;
+        }
+
+    }
 
     private ClientHttpRequestFactory getClientHttpRequestFactory() {
-        if (clientHttpRequestFactory == null) {
-            clientHttpRequestFactory = new SimpleClientHttpRequestFactory();
-        }
         return clientHttpRequestFactory;
     }
 
@@ -42,7 +48,7 @@ public class OAuth2Config {
     @Qualifier("myRestTemplate")
     public OAuth2RestOperations restTemplate() {
 
-        OAuth2RestTemplate template = new OAuth2RestTemplate(fullAccessresourceDetails(), new DefaultOAuth2ClientContext(
+        OAuth2RestTemplate template = new OAuth2RestTemplate(fullAccessResourceDetails(), new DefaultOAuth2ClientContext(
                 new DefaultAccessTokenRequest()));
         return prepareTemplate(template, false);
     }
@@ -51,7 +57,7 @@ public class OAuth2Config {
     @Qualifier("myClientOnlyRestTemplate")
     public OAuth2RestOperations restClientOnlyTemplate() {
 
-        OAuth2RestTemplate template = new OAuth2RestTemplate(fullAccessresourceDetailsClientOnly(), new DefaultOAuth2ClientContext(
+        OAuth2RestTemplate template = new OAuth2RestTemplate(fullAccessResourceDetailsClientOnly(), new DefaultOAuth2ClientContext(
                 new DefaultAccessTokenRequest()));
         return prepareTemplate(template, true);
     }
@@ -81,8 +87,8 @@ public class OAuth2Config {
     }
 
     @Bean
-    @Qualifier("myFullAcessDetails")
-    public OAuth2ProtectedResourceDetails fullAccessresourceDetails() {
+    @Qualifier("myFullAccessDetails")
+    public OAuth2ProtectedResourceDetails fullAccessResourceDetails() {
         ResourceOwnerPasswordResourceDetails resource = new ResourceOwnerPasswordResourceDetails();
         resource.setAccessTokenUri(oAuth2Properties.getTokenUri());
         resource.setClientId("user_member");
@@ -94,8 +100,8 @@ public class OAuth2Config {
     }
 
     @Bean
-    @Qualifier("myClientOnlyFullAcessDetails")
-    public OAuth2ProtectedResourceDetails fullAccessresourceDetailsClientOnly() {
+    @Qualifier("myClientOnlyFullAccessDetails")
+    public OAuth2ProtectedResourceDetails fullAccessResourceDetailsClientOnly() {
         ClientCredentialsResourceDetails resource = new ClientCredentialsResourceDetails();
         resource.setAccessTokenUri(oAuth2Properties.getTokenUri());
         resource.setClientId("clientapp");

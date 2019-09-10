@@ -1,6 +1,7 @@
 server:
   port: 9090
 
+
 web:
   domain: localhost:${server.port}
   oauth2:
@@ -10,7 +11,14 @@ web:
     client-id: kane-app
     client-secret: pass1234
     callback: /callback
+
 logging:
   level:
     web: debug
     kane.exercise: debug
+
+spring:
+  security:
+    user:
+      name: kane
+      password: pass1234
