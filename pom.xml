@@ -32,6 +32,7 @@
         <module>spring-controller-log</module>
         <module>kane-commons</module>
         <module>spring-event</module>
+        <module>simple-ocr-tess4j</module>
     </modules>
 
     <dependencies>
@@ -112,6 +113,19 @@
                 <groupId>org.springframework.security</groupId>
                 <artifactId>spring-security-test</artifactId>
                 <version>${security.version}</version>
+            </dependency>
+
+            <!-- ocr -->
+            <dependency>
+                <groupId>net.java.dev.jna</groupId>
+                <artifactId>jna</artifactId>
+                <version>4.2.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.sourceforge.tess4j</groupId>
+                <artifactId>tess4j</artifactId>
+                <version>4.1.1</version>
             </dependency>
 
         </dependencies>
