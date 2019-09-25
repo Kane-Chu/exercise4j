@@ -12,7 +12,6 @@ import org.springframework.core.io.ResourceLoader;
 import static org.springframework.util.ResourceUtils.CLASSPATH_URL_PREFIX;
 
 /**
- * 需安装tesseract，MAC系统运行 "brew install tesseract"
  * @author kane
  */
 public class Main {
