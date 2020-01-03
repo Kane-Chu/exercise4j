@@ -1,2 +1,9 @@
 server:
   port: 8080
+
+logging:
+  level:
+    web: debug
+graphiql:
+  endpoint: /books
+  enabled: true

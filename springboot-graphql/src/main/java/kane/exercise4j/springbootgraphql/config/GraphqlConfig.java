@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class GraphqlConfig {
 
-    @Value("${graphql.servlet.mapping:/graphql}")
+    @Value("${graphql.servlet.mapping:/books}")
     private String graphqlServletMapping;
 
     @Bean
