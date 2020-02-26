@@ -2,6 +2,7 @@ type Author {
     id: Int
     name: String
     age: Int
+    books: [Book]
 }
 
 type Book {

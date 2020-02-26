@@ -4,6 +4,14 @@ server:
 logging:
   level:
     web: debug
+
+graphql:
+  servlet:
+    enabled: true
+    mapping: /books
+    corsEnabled: true
+
 graphiql:
-  endpoint: /books
   enabled: true
+  endpoint: /books
+

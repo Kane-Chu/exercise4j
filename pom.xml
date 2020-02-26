@@ -35,6 +35,10 @@
         <module>simple-ocr-tess4j</module>
         <module>groovy-script</module>
         <module>spring-spel</module>
+        <module>excel-poi</module>
+        <module>maven-template</module>
+        <module>spring-validate</module>
+        <module>data-structure-algorithms</module>
     </modules>
 
     <dependencies>
@@ -139,6 +143,33 @@
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy</artifactId>
                 <version>2.5.7</version>
+            </dependency>
+
+            <!-- poi -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>4.1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>4.1.0</version>
+            </dependency>
+
+            <!-- validate -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>6.1.0.Final</version>
+            </dependency>
+
+            <!-- tools -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>28.1-jre</version>
             </dependency>
 
         </dependencies>
