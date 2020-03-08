@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.1.3:23306/flyway
+    username: root
+    password: pass1234
+  # 注意这个flyway路径配置
+  flyway:
+    locations: classpath:/db/migrations
+    table: migration_history
