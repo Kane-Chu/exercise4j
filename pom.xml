@@ -40,6 +40,7 @@
         <module>spring-validate</module>
         <module>data-structure-algorithms</module>
         <module>migration-flyway</module>
+        <module>jpa-test</module>
     </modules>
 
     <dependencies>
@@ -177,6 +178,13 @@
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-core</artifactId>
                 <version>6.3.0</version>
+            </dependency>
+            <!-- db -->
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <scope>runtime</scope>
+                <version>1.4.200</version>
             </dependency>
 
         </dependencies>

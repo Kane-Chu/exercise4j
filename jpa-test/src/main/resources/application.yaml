@@ -1,0 +1,17 @@
+spring:
+  datasource:
+#    url: jdbc:h2:mem:temp_db;DB_CLOSE_ON_EXIT=FALSE
+#    username: root
+#    password: pass1234
+    url: jdbc:mysql://10.1.3.96:3306/dreport_m_sit
+    username: dreport_m_sit
+    password: dreport_m_sit
+  h2:
+    console:
+      enabled: true
+  jpa:
+    generate-ddl: true
+
+logging:
+  level:
+    sql: debug
