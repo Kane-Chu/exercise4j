@@ -35,6 +35,15 @@ public class SpringEventTest {
         applicationContext.publishEvent(new UserRegisterEvent(user));
     }
 
+    @Test
+    public void test(){
+            String dateString = "20200408110033";
+            System.out.println(String.format("%s-%s-%s %s:%s:%s",
+                    dateString.substring(0, 4), dateString.substring(4, 6),
+                    dateString.substring(6, 8), dateString.substring(8, 10),
+                    dateString.substring(10, 12), dateString.substring(12, 14)));
+    }
+
 
 
 }

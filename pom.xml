@@ -41,6 +41,8 @@
         <module>data-structure-algorithms</module>
         <module>migration-flyway</module>
         <module>jpa-test</module>
+        <module>concurrency-exercise</module>
+        <module>performance-exercise</module>
     </modules>
 
     <dependencies>
@@ -141,12 +143,6 @@
                 <version>4.1.1</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.codehaus.groovy</groupId>
-                <artifactId>groovy</artifactId>
-                <version>2.5.7</version>
-            </dependency>
-
             <!-- poi -->
             <dependency>
                 <groupId>org.apache.poi</groupId>
@@ -186,6 +182,16 @@
                 <scope>runtime</scope>
                 <version>1.4.200</version>
             </dependency>
+
+            <!-- groovy -->
+            <dependency>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>2.5.6</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>

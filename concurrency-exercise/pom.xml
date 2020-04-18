@@ -9,24 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>groovy-script</artifactId>
+    <artifactId>concurrency-exercise</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy</artifactId>
+            <groupId>kane.exercise</groupId>
+            <artifactId>kane-commons</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-sql</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.oracle.ojdbc</groupId>
-            <artifactId>ojdbc8</artifactId>
-        </dependency>
-
     </dependencies>
 
 </project>
