@@ -1,4 +1,3 @@
 package kane.exercise.groovyscript
 
-print(["2","3"].contains("1"))
-
+println("1233.213434".toBigDecimal() +  "1233.213434".toBigDecimal())

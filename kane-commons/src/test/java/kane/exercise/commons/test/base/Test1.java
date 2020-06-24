@@ -2,8 +2,11 @@ package kane.exercise.commons.test.base;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.URIParameter;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
@@ -11,6 +14,9 @@ import com.google.common.base.Splitter;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.yaml.snakeyaml.util.UriEncoder;
+
+import static java.time.format.DateTimeFormatter.BASIC_ISO_DATE;
+import static java.time.temporal.ChronoUnit.DAYS;
 
 /**
  * @author kane
@@ -51,6 +57,22 @@ public class Test1 {
         System.out.println(uri.getPath());
         System.out.println(uri2.getScheme());
         System.out.println(uri2.getPath());
+    }
+
+    @Test
+    public void pathTest(){
+        String unixPath = "/a/b/c.txt";
+        String winPath = "E:\\a\\b\\c.txt";
+        System.out.println(Paths.get(winPath).getFileSystem().toString());
+        System.out.println(Paths.get(unixPath).getFileName().toString());
+        System.out.println(Paths.get(winPath).getFileName().toString());
+
+    }
+
+    @Test
+    public void test4(){
+        LocalDateTime start = LocalDateTime.parse("20200514095359", DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
+        System.out.println(start.until(LocalDateTime.now(), DAYS));
     }
 
 

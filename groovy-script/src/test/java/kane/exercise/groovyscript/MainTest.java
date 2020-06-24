@@ -1,6 +1,7 @@
 package kane.exercise.groovyscript;
 
 
+import java.text.DateFormat;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +41,17 @@ public class MainTest {
         Object scriptResult = script.run();
 
         log.info("script execute result [{}]", scriptResult);
+
+    }
+
+    @Test
+    public  void test2(){
+        String sql = "SQL(\"sadasdsa\")";
+        System.out.println(sql.substring(sql.indexOf("\"")+1, sql.lastIndexOf("\"")));
+    }
+
+    @Test
+    public void test3(){
 
     }
 
