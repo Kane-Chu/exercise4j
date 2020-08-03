@@ -46,6 +46,7 @@
         <module>jooq-exercise</module>
         <module>jvm-test</module>
         <module>netty-exercise</module>
+        <module>spring-aop</module>
     </modules>
 
     <dependencies>

@@ -1,4 +1,4 @@
-package kane.exercise.oom;
+package kane.exercise.jvm.oom;
 
 /**
  * java.lang.StackOverflowError

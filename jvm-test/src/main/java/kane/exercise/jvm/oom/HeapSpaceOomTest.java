@@ -1,4 +1,4 @@
-package kane.exercise.oom;
+package kane.exercise.jvm.oom;
 
 import java.util.ArrayList;
 import java.util.List;
